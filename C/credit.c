@@ -1,17 +1,17 @@
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 
-long getCard();
-int getLongLenght(long value);
-int checkCard(long cardNumber);
-string getCardType(long cardNumber);
+long long getCard();
+int getLongLenght(long long value);
+int checkCard(long long cardNumber);
+string getCardType(long long cardNumber);
 
 int len;
 
 int main(void)
 {
     // Gets card and saves in creditCard variable
-    long creditCard = getCard();
+    long long creditCard = getCard();
     // Calls checkCard Function to validate checksum
     if (checkCard(creditCard) != 0)
     { // If last digit in checksum is not 0
@@ -26,21 +26,21 @@ int main(void)
 }
 
 // Function to get input of credit card long
-long getCard()
+long long getCard()
 {
-    long x;
+    long long x;
     // Loops to check if input fits initial criterea
     do
     {
-        x = get_long("Number:");
-        len = getLongLenght(x);
+        x = get_long_long("Number:");
+        len = getLongLenght(x);        
     }
-    while (x < 1);
+    while (x < 1);    
     return x;
 }
 
 // Function that validates card number checksum
-int checkCard(long cardNumber)
+int checkCard(long long cardNumber)
 {
     // Sets checksum to 0 initially
     int checksum = 0;
@@ -71,7 +71,7 @@ int checkCard(long cardNumber)
 }
 
 // Function to get card type (VISA, AMEX or Mastercard)
-string getCardType(long cardNumber)
+string getCardType(long long cardNumber)
 {
     cardNumber = cardNumber / 1000000000000; // Gets digits after 12nd position
     if ((len == 13) && (cardNumber == 4))    // VISA card with 13 digits
@@ -95,7 +95,7 @@ string getCardType(long cardNumber)
 }
 
 // Function to obtain long input lenght
-int getLongLenght(long value)
+int getLongLenght(long long value)
 {
     int l = 0;
     while (value > 0)

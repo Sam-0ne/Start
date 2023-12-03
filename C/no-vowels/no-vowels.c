@@ -1,9 +1,4 @@
-// Write a function to replace vowels with numbers
-// Get practice with strings
-// Get practice with command line
-// Get practice with switch
-
-#include <cs50.h>
+#include "cs50.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -29,7 +24,7 @@ string replace(string text)
         {
 
             case 'a':
-                text[i] = '6';
+                text[i] = '4';
                 break;
             case 'e':
                 text[i] = '3';
@@ -39,6 +34,9 @@ string replace(string text)
                 break;
             case 'o':
                 text[i] = '0';
+                break;
+            case 't':
+                text[i] = '7';
                 break;
         }
     }

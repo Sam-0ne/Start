@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 #include <time.h>
 #include <ctype.h>
@@ -27,7 +27,7 @@ int main(void)
     }
 
     if (answer =='y') {
-        printf("Ok, nice to meet you, %s from %i!\nHope you have a great birthday in %i!\n", name, yearBorn, yearBorn+age);
+        printf("Ok, nice to meet you, %s from %i!\nHope you've had a great birthday in %i!\n", name, yearBorn, yearBorn+age);
     }
     else if (answer=='n') {
         yearBorn = yearBorn -1;

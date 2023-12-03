@@ -1,7 +1,4 @@
-// Check that a password has at least one lowercase letter, uppercase letter, number and symbol
-// Practice iterating through a string
-// Practice using the ctype library
-#include <cs50.h>
+#include "cs50.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,7 +14,7 @@ int main(void)
     }
     else
     {
-        printf("Your password needs at least one uppercase letter, lowercase letter, number and symbol\n");
+        printf("Your password needs at least 8 characters and one uppercase letter, lowercase letter, number and symbol\n");
     }
 }
 
@@ -28,6 +25,7 @@ bool valid(string password)
     bool lower = false;
     bool nmbr = false;
     bool symb = false;
+    bool size = false;
     // Initializing integer string lenght variable for performance
     int len = strlen(password);
     // Loops through password chars
@@ -53,7 +51,16 @@ bool valid(string password)
         {
             symb = true;
         }
+        // Checks size
+        else if ((len > 7) && (len < 32))
+        {
+            size = true;
+        }
+    }
+    if ((len > 7) && (len < 32))
+    {
+        size = true;
     }
     // Returns boolean concatenated result
-    return (lower && upper && nmbr && symb);
+    return (lower && upper && nmbr && symb && size);
 }
