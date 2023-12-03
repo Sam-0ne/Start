@@ -1,7 +1,4 @@
-// Practice working with structs
-// Practice applying sorting algorithms
-
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 
 #define NUM_CITIES 10

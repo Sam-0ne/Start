@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -83,6 +83,7 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+    printf("\nWinner:\n");
     // Initialize variable to hold most voted candidate
     int most_votes = -1;
     // Loops through candidates to find the highest votecount
